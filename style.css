@@ -501,5 +501,51 @@ color:var(--main-color);
 
 }
 
+/* this may be change */
+/* Hide menu by default on small screens */
+.navbar {
+  display: none;
+  position: fixed; /* fixed so it stays while scrolling */
+  top: 0;
+  right: 0;
+  height: 100vh; /* full vertical height */
+  width: 200px;
+  padding: 20px;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 0; /* optional, usually full-height navbars don’t need rounded corners */
+  background: rgba(17, 17, 17, 0.5); /* semi-transparent */
+  backdrop-filter: blur(5px); /* optional frosted-glass effect */
+  z-index: 1000; /* keep it above other content */
+}
+
+
+
+/* When active, show menu */
+.navbar.active {
+  display: flex;
+}
+
+/* Hamburger visible only on small screens */
+#menu-icon {
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    right: 20px;
+    top: 70px;
+  }
+}
+
+/* this may be change */
+
 
 

@@ -233,6 +233,24 @@
             });
         });
     </script>
+	<script>
+  // Toggle navbar on mobile
+  let menuIcon = document.querySelector("#menu-icon");
+  let navbar = document.querySelector(".navbar");
+
+  menuIcon.onclick = () => {
+    navbar.classList.toggle("active");
+    menuIcon.classList.toggle("fa-xmark"); // switch hamburger to X
+  };
+
+  // Close menu when clicking a nav link
+  document.querySelectorAll(".navbar a").forEach(link => {
+    link.onclick = () => {
+      navbar.classList.remove("active");
+      menuIcon.classList.remove("fa-xmark");
+    };
+  });
+</script>
 	<script src="main.js"></script>
 	
 </body>
